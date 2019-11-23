@@ -1,0 +1,18 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: nightowls
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: 'REGISTRY_URL/replace-me-namespace/nightowls:BUILD_NUMBER'
+          ports:
+            - containerPort: 3000
+          env:
+            - name: service_watson_conversation
+              valueFrom:
+                secretKeyRef:
+                  name: binding-night-owls-conversation-1574466424843
+                  key: binding

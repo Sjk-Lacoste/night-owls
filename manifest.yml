@@ -1,0 +1,13 @@
+applications:
+- buildpack: sdk-for-nodejs
+  command: npm start
+  domain: null
+  host: null
+  instances: 1
+  memory: 256M
+  name: NightOwls
+  routes:
+  - route: night-owls.eu-gb.cf.appdomain.cloud
+  services:
+  - night-owls-conversation-1574466424843
+  timeout: 180
